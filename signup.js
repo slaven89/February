@@ -1,6 +1,8 @@
 let storedInfo = [];
 
+let signupPassword = document.getElementById('signupPassword');
 let signupSubmit = document.getElementById('signupSubmit');
+let viewPass = document.querySelector('.viewPass');
 
 const submitForm = (ev) => {
     ev.preventDefault();
@@ -20,3 +22,11 @@ const submitForm = (ev) => {
 document.addEventListener('DOMContentLoaded', () => {
     signupSubmit.addEventListener('click', submitForm);
 });
+
+viewPass.addEventListener('click' , () => {
+    if (signupPassword.type === "password") {
+        signupPassword.type = "text";
+    } else {
+        signupPassword.type = "password";
+    }
+    })
