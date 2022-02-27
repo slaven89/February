@@ -1,0 +1,15 @@
+.neutralField {
+    font-weight: bold;
+}
+
+.correctField {
+    font-weight: bold;
+    border-bottom-color: greenyellow;
+    border: bottom width 8px;
+}
+
+.incorrectField {
+    font-weight: bold;
+    border-bottom-color: red;
+    border: bottom width 8px;
+}
