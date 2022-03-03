@@ -11,20 +11,21 @@
     <form>
         <p>Enter an e-mail address and a password</p>
         <input type="email" placeholder="E-mail" required id="signupEmail" class="neutralField">
-        <input type="password" placeholder="Password" required id="signupPassword" class="neutralField">
+        <input type="text" placeholder="Password" required id="signupPassword" class="neutralField">
         <input type="checkbox" class="viewPass">
-        <label for="viewPass">See Password.</label>
+        <label for="viewPass">Hide Password.</label>
         <h6 hidden id="passReqs">Password must include at least one letter and one number.</h6>
         <button type="submit" id="signupSubmit">Submit</button>
     </form>
     <div>
         <p>Create a random password</p>
-        <input type="button" value="Create">
-        <p hidden>Your new password is:</p>
-        <h3 hidden></h3>
-        <input hidden type="button" value="Copy to Clipboard">
-        <input hidden type="email" placeholder="E-mail">
-        <input hidden type="submit">
+        <input id="randomButton" type="button" value="Create">
+        <p id = "newPassText" hidden>Your new password is:</p>
+        <h3 id = "newPassHere" hidden>..</h3>
+        <form>
+        <input hidden id="randomPassEmail" type="email" placeholder="E-mail" required>
+        <input hidden id="randomLoginSubmit" type="submit" value="Submit">
+        </form>
     </div>
 </body>
 <script src="signup.js"></script>

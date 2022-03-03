@@ -6,6 +6,11 @@ let signupSubmit = document.getElementById('signupSubmit');
 let viewPass = document.querySelector('.viewPass');
 let passReqs = document.getElementById('passReqs');
 
+let randomButton = document.getElementById('randomButton');
+let newPassText = document.getElementById('newPassText');
+let newPassHere = document.getElementById('newPassHere');
+let randomPassEmail = document.getElementById('randomPassEmail');
+let randomLoginSubmit = document.getElementById('randomLoginSubmit');
 
 
 //storing the signup data.
@@ -21,9 +26,11 @@ const submitForm = (ev) => {
     sessionStorage.setItem('signupInfo', JSON.stringify(storedInfo) );
     console.log('added' , userInfo , 'to the array.');
     console.log(storedInfo);
-    document.forms[0].reset();
+    signupEmail.reset();
+    signupPassword.reset();
 }
 
+//Showing the user if the e-mail and Password are written 
 var emailValidate = (ev) => {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(signupEmail.value)) {
         signupEmail.className = 'correctField';
@@ -35,7 +42,7 @@ var emailValidate = (ev) => {
 
 var passwordValidate = (ev) => {
     
-    if (/^[\w@#\$\.%\^&\*+=_-]{7,40}$/.test(signupPassword.value) && /[0-9]/.test(signupPassword.value)) {
+    if (/^(?=.*\d)(?=.*[a-zA-Z]).{7,}$/.test(signupPassword.value)) {
         signupPassword.className = 'corrrectField';
         passReqs.hidden = true;
         signupSubmit.disabled = false;
@@ -46,6 +53,33 @@ var passwordValidate = (ev) => {
         signupSubmit.disabled = true;
     }
 }
+
+var makeRandomPass = (ev) => {
+    let randomPass = Math.random().toString(36).slice(2);
+    newPassText.hidden = false;
+    newPassHere.innerText = randomPass;
+    newPassHere.hidden = false;
+    console.log(newPassHere.textContent);
+    randomPassEmail.hidden = false;
+    randomLoginSubmit.hidden = false;
+    randomLoginSubmit.addEventListener('click' , () => {
+        ev.preventDefault();
+        let userInfo = {
+            id: Date.now(),
+            email: randomPassEmail.value,
+            password: document.getElementById('newPassHere').value
+        }
+        storedInfo.push(userInfo);
+        
+        sessionStorage.setItem('signupInfo', JSON.stringify(storedInfo) );
+        console.log('added' , userInfo , 'to the array.');
+        console.log(storedInfo);
+    })
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    randomButton.addEventListener('click', makeRandomPass);
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     signupSubmit.addEventListener('click', submitForm);
@@ -58,6 +92,10 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     signupPassword.addEventListener('keypress', passwordValidate);
 });
+
+
+
+
 
 //checkbox for password visibility.
 viewPass.addEventListener('click' , () => {
