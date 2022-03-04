@@ -8,7 +8,7 @@
     <title>Sign up</title>
 </head>
 <body>
-    <form>
+    <form id="formOne">
         <p>Enter an e-mail address and a password</p>
         <input type="email" placeholder="E-mail" required id="signupEmail" class="neutralField">
         <input type="text" placeholder="Password" required id="signupPassword" class="neutralField">
@@ -22,8 +22,8 @@
         <input id="randomButton" type="button" value="Create">
         <p id = "newPassText" hidden>Your new password is:</p>
         <h3 id = "newPassHere" hidden>..</h3>
-        <form>
-        <input hidden id="randomPassEmail" type="email" placeholder="E-mail" required>
+        <form id="formTwo">
+        <input hidden id="randomPassEmail" type="email" placeholder="E-mail" class="neutralField" required>
         <input hidden id="randomLoginSubmit" type="submit" value="Submit">
         </form>
     </div>

@@ -5,11 +5,11 @@
 .correctField {
     font-weight: bold;
     border-bottom-color: greenyellow;
-    border: bottom width 8px;
+    border: bottom width 20px bold;
 }
 
 .incorrectField {
     font-weight: bold;
     border-bottom-color: red;
-    border: bottom width 8px;
+    border: bottom width 20px bold;
 }

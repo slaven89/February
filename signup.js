@@ -26,8 +26,7 @@ const submitForm = (ev) => {
     sessionStorage.setItem('signupInfo', JSON.stringify(storedInfo) );
     console.log('added' , userInfo , 'to the array.');
     console.log(storedInfo);
-    signupEmail.reset();
-    signupPassword.reset();
+    window.location = "login.html"
 }
 
 //Showing the user if the e-mail and Password are written 
@@ -54,6 +53,16 @@ var passwordValidate = (ev) => {
     }
 }
 
+var emailValidateTwo = (ev) => {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(randomPassEmail.value)) {
+        randomPassEmail.className = 'correctField';
+    }
+    else {
+        randomPassEmail.className = 'incorrectField';
+    }
+}
+
+
 var makeRandomPass = (ev) => {
     let randomPass = Math.random().toString(36).slice(2);
     newPassText.hidden = false;
@@ -67,15 +76,15 @@ var makeRandomPass = (ev) => {
         let userInfo = {
             id: Date.now(),
             email: randomPassEmail.value,
-            password: document.getElementById('newPassHere').value
+            password: newPassHere.textContent
         }
         storedInfo.push(userInfo);
         
         sessionStorage.setItem('signupInfo', JSON.stringify(storedInfo) );
         console.log('added' , userInfo , 'to the array.');
-        console.log(storedInfo);
-    })
-}
+        console.log(storedInfo)
+        }
+    )
 
 document.addEventListener('DOMContentLoaded', () => {
     randomButton.addEventListener('click', makeRandomPass);
@@ -93,7 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
     signupPassword.addEventListener('keypress', passwordValidate);
 });
 
-
+document.addEventListener('DOMContentLoaded', () => {
+    randomPassEmail.addEventListener('keypress', emailValidateTwo);
+});
 
 
 
