@@ -23,7 +23,7 @@ const submitForm = (ev) => {
     }
     storedInfo.push(userInfo);
     
-    sessionStorage.setItem('signupInfo', JSON.stringify(storedInfo) );
+    sessionStorage.addItem('signupInfo', JSON.stringify(storedInfo) );
     console.log('added' , userInfo , 'to the array.');
     console.log(storedInfo);
     window.location = "login.html"
@@ -62,7 +62,6 @@ var emailValidateTwo = (ev) => {
     }
 }
 
-
 var makeRandomPass = (ev) => {
     let randomPass = Math.random().toString(36).slice(2);
     newPassText.hidden = false;
@@ -81,10 +80,10 @@ var makeRandomPass = (ev) => {
         storedInfo.push(userInfo);
         
         sessionStorage.setItem('signupInfo', JSON.stringify(storedInfo) );
-        console.log('added' , userInfo , 'to the array.');
-        console.log(storedInfo)
+        window.location = 'login.html';
         }
     )
+    }
 
 document.addEventListener('DOMContentLoaded', () => {
     randomButton.addEventListener('click', makeRandomPass);
@@ -116,3 +115,6 @@ viewPass.addEventListener('click' , () => {
         signupPassword.type = "password";
     }
     })
+
+
+    
