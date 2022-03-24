@@ -1,4 +1,6 @@
 let storedInfo = [];
+var priorLogins = sessionStorage.getItem('signupInfo');
+storedInfo = JSON.parse(priorLogins);
 
 let signupEmail = document.getElementById('signupEmail');
 let signupPassword = document.getElementById('signupPassword');
@@ -23,10 +25,9 @@ const submitForm = (ev) => {
     }
     storedInfo.push(userInfo);
     
-    sessionStorage.addItem('signupInfo', JSON.stringify(storedInfo) );
+    sessionStorage.setItem('signupInfo', JSON.stringify(storedInfo) );
     console.log('added' , userInfo , 'to the array.');
-    console.log(storedInfo);
-    window.location = "login.html"
+    window.location = 'login.html';
 }
 
 //Showing the user if the e-mail and Password are written 
