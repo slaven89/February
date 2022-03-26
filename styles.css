@@ -13,3 +13,8 @@
     border-bottom-color: red;
     border: bottom width 20px bold;
 }
+
+.subBtn{
+    height: 30px;
+    width: 60px;
+}
