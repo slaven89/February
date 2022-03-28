@@ -8,24 +8,29 @@
     <title>Sign up</title>
 </head>
 <body>
-    <form id="formOne">
-        <p>Enter an e-mail address and a password</p>
-        <input type="email" placeholder="E-mail" required id="signupEmail" class="neutralField">
-        <input type="text" placeholder="Password" required id="signupPassword" class="neutralField">
-        <input type="checkbox" class="viewPass">
-        <label for="viewPass">Hide Password.</label>
-        <h6 hidden id="passReqs">Password must include at least one letter and one number.</h6>
-        <button type="submit" id="signupSubmit" class="subBtn">Submit</button>
-    </form>
-    <div>
-        <p>Create a random password</p>
-        <input id="randomButton" type="button" value="Create" class="subBtn">
-        <p id = "newPassText" hidden>Your new password is:</p>
-        <h3 id = "newPassHere" hidden>..</h3>
-    <form id="formTwo">
-        <input hidden id="randomPassEmail" type="email" placeholder="E-mail" class="neutralField" required>
-        <input hidden id="randomLoginSubmit" type="button" value="Submit" class="subBtn">
-    </form>
+    <div class="container">
+        <header>Create a New Account</header>
+        <div>
+        <form id="formOne">
+            <p>Enter an e-mail address and a password</p>
+            <input type="email" placeholder="E-mail" required id="signupEmail" class="neutralField">
+            <input type="text" placeholder="Password" required id="signupPassword" class="neutralField">
+            <input type="checkbox" class="viewPass">
+            <label for="viewPass">Hide Password.</label>
+            <h6 hidden id="passReqs">Password must include at least one letter and one number.</h6>
+            <button type="submit" id="signupSubmit" class="subBtn">Submit</button>
+        </form>
+        </div>
+        <div>
+            <p>Create a random password</p>
+            <input id="randomButton" type="button" value="Create" class="subBtn">
+            <p id = "newPassText" hidden>Your new password is:</p>
+            <h3 id = "newPassHere" hidden>..</h3>
+            <form id="formTwo">
+                <input hidden id="randomPassEmail" type="email" placeholder="E-mail" class="neutralField" required>
+                <input hidden id="randomLoginSubmit" type="button" value="Submit" class="subBtn">
+            </form>
+        </div>
     </div>
 </body>
 <script src="signup.js"></script>

@@ -8,19 +8,23 @@
     <title>Login</title>
 </head>
 <body>
-    <div>
-        <h1>Sign In</h1>
-        <h4 id="gotWrong" hidden>Email and Password did not match our records.</h4>
-        <input type="email" placeholder="E-mail" required id="loginEmail">
-        <input type="password" placeholder="Password" required id="loginPassword">
-        <input type="checkbox" class="viewPass">
-        <label for="viewPass">See Password</label>
-        <h6 hidden id="passReqs">Password must include at least one letter and one number.</h6>
-        <button type="submit" id="loginSubmit" class="subBtn">Submit</button>
-        <p>Don't have an account?</p>
-        <a href="signup.html">Sign up.</a>
-        <p>Forgot your password?</p>
-        <a href="e-mail.html">Click Here.</a>
+    <div class="container">
+        <header>Sign In</header>
+        <div>
+            <h4 id="gotWrong" hidden>Email and Password did not match our records.</h4>
+            <input type="email" placeholder="E-mail" required id="loginEmail">
+            <input type="password" placeholder="Password" required id="loginPassword">
+            <input type="checkbox" class="viewPass">
+            <label for="viewPass">See Password</label>
+            <h6 hidden id="passReqs">Password must include at least one letter and one number.</h6>
+            <button type="submit" id="loginSubmit" class="subBtn">Submit</button>
+        </div>
+        <div>
+            <p>Don't have an account?</p>
+            <a href="signup.html">Sign up.</a>
+            <p>Forgot your password?</p>
+            <a href="e-mail.html">Click Here.</a>
+        </div>
     </div>
     
 </body>
